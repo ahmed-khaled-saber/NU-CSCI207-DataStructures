@@ -8,13 +8,13 @@ private:
 
 public:
     // Default constructor
-    Car::Car(){
+    Car(){
         speed = 0;
-        model = "Unknown"
+        model = "Unknown";
     }
 
     // Parametrized constructor
-    Car::Car(int spd, string mdl){
+    Car(int spd, string mdl){
         speed = spd;
         model = mdl;
     }
