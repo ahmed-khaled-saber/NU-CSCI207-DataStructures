@@ -11,7 +11,7 @@ int main(){
     if(score < 50){
         cout<<"try another time! \n";
     }else{
-        cout<<"you Passed!"<<endl;
+        cout<<"you Passed!" << endl;
     }
     
     return 0;

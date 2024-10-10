@@ -5,6 +5,7 @@ int main(){
 
     // Dynamic Memory Allocation ? pointers.
     int size;
+
     cout<<"How big the data structure you want at runtime ? ";
     cin>>size;
 

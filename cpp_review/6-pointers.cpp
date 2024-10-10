@@ -5,12 +5,15 @@ int main(){
 
     // memory close control ? pointers.
     int x = 10;
+
     int* ptr;
 
     ptr = &x;
-    cout<<"The value of x accessed by a pointer to x is "<<*ptr<<endl;
+
+    cout<<"The value of x accessed by a pointer to x is "<< *ptr<<endl;
+   
     *ptr = 20;
-    cout<<"The value of x after update it throught a pointer "<<x<<endl;
+    cout<<"The value of x after update it throught a pointer "<< x <<endl;
 
     delete ptr;
     return 0;
