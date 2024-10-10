@@ -9,8 +9,6 @@ int rpow(int base, int exp){ // fabulous recursive function.
         return base * rpow(base, exp-1);
     }
 }
-
-
 int lpow(int base, int exp){
     int result = 1;
     for(int i=0; i<exp; i++){

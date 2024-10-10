@@ -15,7 +15,7 @@ int main(){
     }
 
     for (int i = 0; i < size; i++) {
-        cout << "Element " << i << ": " << nodes[i] << endl;
+        cout << "Element# " << i << ": " << nodes[i] << endl;
     }
 
     delete[] nodes;

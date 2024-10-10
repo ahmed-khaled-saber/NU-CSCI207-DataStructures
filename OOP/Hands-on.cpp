@@ -25,29 +25,28 @@ class Room
         }
         ~Room();
 };
-
-    Room::Room()
-    {
-        length = 6.9;
-        breadth = 4.2;
-        name = "bed room";
-    }
-    Room::Room(float l)
-    {
-        length = l;
-        breadth = 7.2;
-        name = "living room";
-    }
-    Room::Room(float l, float b, string n)
-    {
-        length = l;
-        breadth = b;
-        name = n;
-    }
-    Room::~Room()
-    {
-        cout << "Item " << name << " destroyed!" << endl;
-    }
+Room::Room()
+{
+    length = 6.9;
+    breadth = 4.2;
+    name = "bed room";
+}
+Room::Room(float l)
+{
+    length = l;
+    breadth = 7.2;
+    name = "living room";
+}
+Room::Room(float l, float b, string n)
+{
+    length = l;
+    breadth = b;
+    name = n;
+}
+Room::~Room()
+{
+    cout << "Item " << name << " destroyed!" << endl;
+}
 
 
 int main(){
