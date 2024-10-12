@@ -50,7 +50,6 @@ Room::~Room()
 
 
 int main(){
-
     // 
     Room r1;
     Room r2(100.2);
@@ -59,6 +58,5 @@ int main(){
     r1.display_info();
     r2.display_info();
     r3.display_info();
-
     return 0;
 }
