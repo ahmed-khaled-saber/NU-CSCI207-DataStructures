@@ -3,31 +3,35 @@ using namespace std;
 
 class Person {
     private:
-        string nationalId;
+        string id;
         string name;
         int age;
     public:
         // Cosnstructor
-        Person(string id, string n, int a) : name(n), age(a), nationalId(id) {}
+        Person(string id, string name, int age){
+            this->id = id;
+            this->name = name;
+            this->age = age;
+        }
 
         // Getters and Setters
+        string getId(){
+            return this->id;
+        }
         string getName(){
             return this->name;
-        }
-        void setName(string n) {
-            this->name = n;
         }
         int getAge(){
             return this->age;
         }
-        void setAge(int a) {
-            this->age = a;
+        void setId(string id){
+            this->id = id;
         }
-        string getNationalId(){
-            return this->nationalId;
+        void setName(string name) {
+            this->name = name;
         }
-        void setNationalID(string id){
-            this->nationalId = id;
+        void setAge(int age) {
+            this->age = age;
         }
 
         // member functions
@@ -35,12 +39,13 @@ class Person {
             return "Person";
         }
         void printInfo(){
-            cout << "Name: " << this->name << ", Age: " << this->age << ", National ID: " << this->nationalId << endl;
+            cout << "Name: " << this->name << ", Age: " << this->age << ", National ID: " << this->id << endl;
         }
 };
 
 int main(){
-    Person some_person("0990745", "Mohammed", 22);
+    Person some_person("29907141401518", "Mohammed", 25);
+
     cout << some_person.getRole() << endl;
     some_person.printInfo();
 
