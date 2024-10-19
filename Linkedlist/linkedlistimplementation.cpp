@@ -60,8 +60,8 @@ class Node{
             else{
                 ll->setnext(ll->getnext());
             }
-            return false;
         }
+        return false;
     }
 
 int main(){
