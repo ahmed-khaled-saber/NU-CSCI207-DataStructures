@@ -10,7 +10,7 @@ class Node{
             this->next = nullptr;
         }
         Node(int v, Node* n){
-            this->value = v;
+            this->value = v;            
             this->next = n;
         }
         int getvalue(){
@@ -23,50 +23,50 @@ class Node{
             this->value = v;
 
         }
-        void setnext(Node* n){              
+        void setnex         t(Node* n){              
             this->next = n;
 
         }
 };
 
-    // Traversal
-    void printllist(Node* ll){
-        while(ll != nullptr){
-            cout<<ll->getvalue() <<endl;
-            ll = ll->getnext();
+// Traversal
+void printllist(Node* ll){
+    while(ll != nullptr){
+        cout<<ll->getvalue() <<endl;
+        ll = ll->getnext();
+    }
+    cout<<"_____"<<endl;
+}
+
+// Insertion
+void insertafter(Node* predecessor, int value){
+    Node* newnode = new Node(value, predecessor->getnext());
+    predecessor->setnext(newnode);
+}
+
+// deletion
+void deletenode(Node* predeccesor){
+    Node* toberemoved = predeccesor->getnext();
+    predeccesor->setnext(toberemoved->getnext());
+    delete toberemoved;
+}
+
+// // searching
+bool searchfornodeinll(Node* ll, int v){
+    while(ll!=nullptr){
+        if (ll->getvalue() == v){
+            return true;
         }
-        cout<<"_____"<<endl;
-    }
-
-    // Insertion
-    void insertafter(Node* predecessor, int value){
-        Node* newnode = new Node(value, predecessor->getnext());
-        predecessor->setnext(newnode);
-    }
-
-    // deletion
-    void deletenode(Node* predeccesor){
-        Node* toberemoved = predeccesor->getnext();
-        predeccesor->setnext(toberemoved->getnext());
-        delete toberemoved;
-    }
-
-    // searching
-    bool searchfornodeinll(Node* ll, int v){
-        while(ll!=nullptr){
-            if (ll->getvalue() == v){
-                return true;
-            }
-            else{
-                ll->setnext(ll->getnext());
-            }
+        else{
+            ll->setnext(ll->getnext());
         }
-        return false;
     }
+    return false;
+}
 
 int main(){
     Node* llist = new Node(10, new Node(20, new Node(25, new Node(40, nullptr)))); 
-    cout << searchfornodeinll(llist, 50) << endl;  // 0:false
+    // cout << searchfornodeinll(llist, 50) << endl;  // 0:false
     printllist(llist);
 
     Node* pred = llist->getnext()->getnext();  //25
