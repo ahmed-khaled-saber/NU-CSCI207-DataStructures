@@ -49,6 +49,7 @@ void delete_node(Node* predeccessor){
     temp->setnext(nullptr);
     delete temp;
 }
+// Search
 
 
 int main(){
