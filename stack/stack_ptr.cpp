@@ -1,30 +1,30 @@
 #include <iostream>
 using namespace std;
 
-struct StackNode {
-    int item;
-    StackNode *next;
+struct Node {
+    int value;
+    Node *next;
 };
 
 class Stack {
-    StackNode *top;
+    Node *top;
 public:
     Stack() {
-        top = NULL;
+        top = nullptr;
     }
 
     bool isEmpty() {
         return top == NULL;
     }
 
-    void push(int newItem) {
-        StackNode *newPtr = new StackNode;  // Allocate a new StackNode
-        if (newPtr == NULL)
+    void push(int newvalue) {
+        Node *newNode = new Node;  // Allocate a new Node
+        if (newNode == nullptr)
             cout << "Stack push cannot allocate memory" << endl;
         else {
-            newPtr->item = newItem;
-            newPtr->next = top;
-            top = newPtr;
+            newNode->value = newvalue;
+            newNode->next = top;
+            top = newNode;
         }
     }
 
@@ -32,7 +32,7 @@ public:
         if (isEmpty())
             cout << "Stack empty on pop" << endl;
         else {
-            StackNode *temp = top;
+            Node *temp = top;
             top = top->next;
             temp->next = NULL;
             delete temp;
@@ -43,8 +43,8 @@ public:
         if (isEmpty())
             cout << "Stack empty on pop" << endl;
         else {
-            stackTop = top->item;
-            StackNode *temp = top;
+            stackTop = top->value;
+            Node *temp = top;
             top = top->next;
             temp->next = NULL;
             delete temp;
@@ -56,15 +56,15 @@ public:
             cout << "Stack empty on getTop" << endl;
             return -1;  // Return -1 or any other sentinel value for empty stack
         } else {
-            return top->item;
+            return top->value;
         }
     }
 
     void display() {
-        StackNode *curPtr = top;
-        cout << "\nItems in the stack: [ ";
+        Node *curPtr = top;
+        cout << "\nvalues in the stack: [ ";
         while (curPtr != NULL) {
-            cout << curPtr->item << " ";
+            cout << curPtr->value << " ";
             curPtr = curPtr->next;
         }
         cout << "]\n";
