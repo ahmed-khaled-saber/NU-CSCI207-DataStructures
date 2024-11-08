@@ -20,29 +20,51 @@ private:
 
 public:
     Stack() {
-        top=NULL;
+        top=nullptr;    // empty stack
     }
 
     // Function to check if the stack is empty
     bool isEmpty() {
         // TODO: Return true if stack is empty; otherwise, false
+        return this->top == nullptr
     }
 
     // Function to push an element onto the stack
     void push(int data) {
         // TODO: Create a new node and push it onto the stack
-        Node* newnode = new Node();
-        newnode->data = data;
-        newnode->next = this->top;
-        this->top = newnode->next;
-
+        Node* newNode = new Node();
+        newNode->data = data;
+        // stack empty
+        if(isEmpty()){
+            this->top = newNode;
+        }else{
+            newNode->next = this->top;
+            this->top = newNode;
+        }
     }
 
     // Function to pop the top element from the stack and return its value
     int pop() {
         // TODO: Remove the top element and return its value
         // Important: Check if the stack is empty before popping
-        
+        if(isEmpty()){
+            cout<<"ERROR"; 
+            return -1;
+        }else{
+            int value = this->top->data;
+            Node* toberemoved = this->top;
+            this->top = this->top->next;
+            delete toberemoved;
+            return value;
+        }
+    }
+    int peak(){
+        if(isEmpty()){
+            cout<<"EMPTY!!"
+            return -1;
+        }else{
+            return this->top->data;
+        }
     }
 };
 
@@ -53,7 +75,6 @@ void decimalToBinary(int decimalNumber) {
     // Conversion logic: push remainders to the stack
 
     // Push remainder onto the stack
-
 
 
     // Display the binary number by popping all elements
