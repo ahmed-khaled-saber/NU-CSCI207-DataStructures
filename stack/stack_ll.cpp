@@ -85,6 +85,27 @@ void decimalToBinary(int decimalNumber) {
     cout << endl;
 }
 
+
+bool areBracesBalanced(string expr) {
+    Stack stack;
+
+    for (char ch : expr) {
+        if (ch == '(' || ch == '{' || ch == '[') {
+            stack.push(ch);
+        } else if (ch == ')' || ch == '}' || ch == ']') {
+            if (stack.isEmpty()) {
+                return false;  // No matching opening brace
+            }
+            char top = stack.pop();
+            if ((ch == ')' && top != '(') ||
+                (ch == '}' && top != '{') ||
+                (ch == ']' && top != '[')) {
+                return false;  // Mismatched brace
+            }
+        }
+    }
+
+
 int main() {
     int decimalNumber;
 

@@ -1,0 +1,7 @@
+inorder(node, k)
+{
+  if (node == 0) return;
+  inorder(node->left);
+  if (node->value == k) print(node->value);
+  inorder(node->right);
+}

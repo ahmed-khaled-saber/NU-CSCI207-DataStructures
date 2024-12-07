@@ -1,0 +1,9 @@
+// TASK RUBRIC:
+// - Reversing the queue: 2 Grades
+// - Divisible by k: 2 Grades
+// - Element greater than the Front: 2 Grades
+// - Code quality & correctness: 2 Grades
+// - Attendance: 2 Grades
+
+// Bonus RUBRIC:
+// Checking if the queue is sorted in ascending order correctly: 2 Grades
